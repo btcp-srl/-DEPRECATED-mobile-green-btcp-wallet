@@ -173,4 +173,10 @@ public class WatchOnlyLoginActivity extends LoginActivity implements View.OnClic
             return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+    }
 }

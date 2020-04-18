@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Green</string>
+    <string name="app_name" translatable="false">BTCP Wallet</string>
     <string name="empty" translatable="false" />
     <string name="btchip" translatable="false">BTChip</string>
     <string name="pref_default_host" translatable="false">127.0.0.1</string>
@@ -15,7 +15,7 @@
     <string name="doubleNewLine" translatable="false">\\n\\n</string>
     <string name="default123" translatable="false">123</string>
     <string name="notification_format_string" translatable="false">%s</string>
-    <string name="id_blockstream_green" translatable="false">Blockstream Green</string>
+    <string name="id_blockstream_green" translatable="false">BTCP Wallet</string>
 
     <string-array name="twoFactorMethods" translatable="false">
         <item>email</item>

@@ -14,20 +14,41 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btcp_watchonly_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="end|top"
+                android:src="@drawable/ic_btcp_freccia_verde"/>
+
+        </LinearLayout>
+
         <View
             android:layout_width="fill_parent"
             android:layout_height="50dp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="275dp"
+            android:layout_height="324dp"
             android:contentDescription="@string/id_green_logo"
-            android:src="@drawable/ic_logo_big" />
+            android:src="@drawable/btcp_logo" />
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="16dp"/>
 
+        <!--
         <Button
             android:id="@+id/settingsButton"
             style="@style/settingsButton"
@@ -36,6 +57,7 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/id_select_network"
             />
+        -->
 
         <View
             android:layout_width="fill_parent"

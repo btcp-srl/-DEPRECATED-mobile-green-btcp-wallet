@@ -6,13 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.greenaddress.greenapi.data.NetworkData;
 import it.bitcoinpeople.wallet.AuthenticationHandler;
 import it.bitcoinpeople.wallet.ui.LoginActivity;
-import it.bitcoinpeople.wallet.ui.NetworkSettingsActivity;
 import it.bitcoinpeople.wallet.ui.R;
-import it.bitcoinpeople.wallet.ui.UI;
 import it.bitcoinpeople.wallet.ui.onboarding.InfoActivity;
 
 public class FirstScreenActivity extends LoginActivity {
@@ -25,15 +24,17 @@ public class FirstScreenActivity extends LoginActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(android.R.color.transparent));
-        setTitle("");
+        // getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(android.R.color.transparent));
+        // setTitle("");
+
+        getSupportActionBar().hide();
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.preauth_menu, menu);
-        menu.findItem(R.id.action_watchonly).setVisible(!getGAApp().getCurrentNetworkData().getLiquid());
+        // getMenuInflater().inflate(R.menu.preauth_menu, menu);
+        // menu.findItem(R.id.action_watchonly).setVisible(!getGAApp().getCurrentNetworkData().getLiquid());
         return true;
     }
 
@@ -73,7 +74,8 @@ public class FirstScreenActivity extends LoginActivity {
 
         final Button loginButton = findViewById(R.id.loginButton);
         final Button restoreButton = findViewById(R.id.restoreButton);
-        final Button selectNetworkButton = UI.find(this, R.id.settingsButton);
+        // final Button selectNetworkButton = UI.find(this, R.id.settingsButton);
+        final ImageView watchOnlyArrow = findViewById(R.id.btcp_watchonly_arrow);
 
         restoreButton.setVisibility(AuthenticationHandler.hasPin(this) ? View.GONE : View.VISIBLE);
         restoreButton.setOnClickListener(v -> startActivity(new Intent(this, MnemonicActivity.class)));
@@ -83,9 +85,16 @@ public class FirstScreenActivity extends LoginActivity {
                                          new Intent(this, InfoActivity.class);
         loginButton.setOnClickListener(v -> startActivity(loginButtonIntent));
 
+        watchOnlyArrow.setOnClickListener(v -> {
+            startActivity(new Intent(this, WatchOnlyLoginActivity.class));
+            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        });
+
+        /*
         selectNetworkButton.setText(networkData.getName());
         selectNetworkButton.setOnClickListener(v -> { startActivityForResult(new Intent(this,
                                                                                         NetworkSettingsActivity.class),
                                                                              NETWORK_SELECTOR_REQUEST); });
+         */
     }
 }

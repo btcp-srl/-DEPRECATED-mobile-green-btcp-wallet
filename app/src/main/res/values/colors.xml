@@ -20,7 +20,7 @@
     <color name="primaryDark">@color/colorPrimaryDark</color>
     <color name="accent">#00B45A</color>
     <color name="accentLight">#21D873</color>
-    <color name="accentPressed">#247252</color>
+    <color name="accentPressed">#20857D</color>
     <color name="textColor">#FFFFFF</color>
     <color name="secondaryTextColor">#EEEEEE</color>
     <color name="tertiaryTextColor">@color/grey_light</color>
@@ -33,8 +33,8 @@
 
     <color name="hide">#00ffffff</color>
 
-    <color name="green">#00B45A</color>
-    <color name="green_dark">#1b7745</color>
+    <color name="green">#27A99E</color>
+    <color name="green_dark">#27A99E</color>
     <color name="red">#EA5262</color>
     <color name="grey_light">#6D7880</color>
     <color name="separator">#313B45</color>
