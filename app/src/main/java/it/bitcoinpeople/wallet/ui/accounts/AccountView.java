@@ -70,6 +70,8 @@ public class AccountView extends CardView {
         mSubaccount= UI.find(view, R.id.subaccount);
         mAddSubaccount = UI.find(view, R.id.addSubaccount);
 
+        mTitleText.setText("Wallet");
+
     }
 
     // Show actions
@@ -94,7 +96,7 @@ public class AccountView extends CardView {
     }
 
     public void setTitle(final String text) {
-        mTitleText.setText(text);
+        // mTitleText.setText(text);
     }
 
     public void setBalance(final long satoshi) {

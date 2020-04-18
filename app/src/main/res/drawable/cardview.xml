@@ -3,11 +3,17 @@
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:startColor="#141E28"
-                android:centerColor="#214049"
-                android:endColor="#0A7C4A"
-                android:angle="315"/>
+                android:startColor="#b0e1dd"
+                android:endColor="#0cada2"
+                android:angle="270"/>
             <corners android:radius="8dp"/>
         </shape>
     </item>
+    <!-- <item
+        android:drawable="@drawable/ic_btcp_logo_overlay"
+        android:left="200dp"
+        android:right="100dp"
+        android:top="10dp"
+        android:bottom="10dp"
+        /> -->
 </layer-list>

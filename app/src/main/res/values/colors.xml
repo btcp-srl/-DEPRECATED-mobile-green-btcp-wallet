@@ -22,7 +22,7 @@
     <color name="accentLight">#2DC5B8</color>
     <color name="accentPressed">#20857D</color>
     <color name="textColor">#000000</color>
-    <color name="secondaryTextColor">#111111</color>
+    <color name="secondaryTextColor">#FFFFFF</color>
     <color name="tertiaryTextColor">@color/grey_light</color>
 
     <color name="receiveArrowColor">#00B196</color>
