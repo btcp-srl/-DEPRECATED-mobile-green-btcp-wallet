@@ -36,7 +36,7 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/ic_onboarding_write"/>
+                    app:srcCompat="@drawable/ic_btcp_mano_penna_verde_giallo"/>
 
                 <View
                     android:layout_width="8dp"
@@ -61,7 +61,7 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/ic_onboarding_noonline"/>
+                    app:srcCompat="@drawable/ic_btcp_no_multidevice_verde_e_giallo"/>
 
                 <View
                     android:layout_width="8dp"
@@ -86,7 +86,7 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/ic_onboarding_noscrshot"/>
+                    app:srcCompat="@drawable/ic_btcp_smartphone_per_screen"/>
 
                 <View
                     android:layout_width="8dp"

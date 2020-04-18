@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
 
 import com.blockstream.libwally.Wally;
@@ -144,12 +145,12 @@ public abstract class GaActivity extends AppCompatActivity {
 
         final String netname = networkData.getName();
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(networkData.getIcon());
+        getSupportActionBar().setIcon(R.drawable.ic_btcp_logo_vec);
         if (!"Bitcoin".equals(netname))
             setTitle(String.format(" %s %s",
                                    netname, getString(resource)));
         else
-            setTitle(resource);
+            setTitle(String.format("  %s", getString(resource)));
     }
 
     public void setTitleBackTransparent() {

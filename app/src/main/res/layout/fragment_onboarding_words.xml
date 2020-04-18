@@ -8,9 +8,8 @@
         android:id="@+id/progressBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
-        android:progressBackgroundTint="@color/separator"
-        android:progressTint="?attr/colorAccent"
         android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/onboarding_progress_bar_style"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:progress="25"/>

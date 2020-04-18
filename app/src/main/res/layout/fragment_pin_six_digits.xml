@@ -35,6 +35,8 @@
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:keyTextSize="32sp"
+        android:keyTextColor="@color/textColor"
+        android:shadowRadius="0.0"
         style="@style/pinKeyboardView"/>
 
 </LinearLayout>

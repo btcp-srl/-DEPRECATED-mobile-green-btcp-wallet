@@ -380,7 +380,7 @@ public class MnemonicActivity extends LoginActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.mnemonic, menu);
-        menu.findItem(R.id.action_scan).setIcon(R.drawable.ic_qr);
+        menu.findItem(R.id.action_scan).setIcon(R.drawable.ic_btcp_qr_code_verde);
         return true;
     }
 

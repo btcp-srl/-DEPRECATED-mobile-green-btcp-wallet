@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         android:textSize="16sp" />
 
     <View
