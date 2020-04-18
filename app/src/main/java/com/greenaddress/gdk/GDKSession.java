@@ -27,7 +27,7 @@ import com.greenaddress.greenapi.data.TransactionData;
 import com.greenaddress.greenapi.data.TwoFactorConfigData;
 import com.greenaddress.greenapi.data.TwoFactorDetailData;
 import com.greenaddress.greenapi.model.NotificationHandlerImpl;
-import com.greenaddress.greenbits.ui.BuildConfig;
+import it.bitcoinpeople.wallet.ui.BuildConfig;
 
 import java.util.Collections;
 import java.util.HashMap;

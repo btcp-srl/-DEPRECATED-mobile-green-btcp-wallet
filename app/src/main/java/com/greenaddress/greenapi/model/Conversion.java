@@ -2,7 +2,7 @@ package com.greenaddress.greenapi.model;
 
 import com.greenaddress.greenapi.data.AssetInfoData;
 import com.greenaddress.greenapi.data.BalanceData;
-import com.greenaddress.greenbits.ui.UI;
+import it.bitcoinpeople.wallet.ui.UI;
 
 import java.text.NumberFormat;
 import java.util.Arrays;

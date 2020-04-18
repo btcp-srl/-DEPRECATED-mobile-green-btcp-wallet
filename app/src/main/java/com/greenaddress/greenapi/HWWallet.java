@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.greenaddress.greenapi.data.HWDeviceData;
 import com.greenaddress.greenapi.data.InputOutputData;
 import com.greenaddress.greenapi.data.NetworkData;
-import com.greenaddress.greenbits.ui.GaActivity;
+import it.bitcoinpeople.wallet.ui.GaActivity;
 
 import java.util.List;
 import java.util.Map;

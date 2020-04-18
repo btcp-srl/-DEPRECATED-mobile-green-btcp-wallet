@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.greenaddress.greenbits.ui.receive.ReceiveActivity">
+    tools:context="it.bitcoinpeople.wallet.ui.receive.ReceiveActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

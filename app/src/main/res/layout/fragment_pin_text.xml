@@ -40,7 +40,7 @@
             <requestFocus/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.greenaddress.greenbits.ui.components.CircularButton
+        <it.bitcoinpeople.wallet.ui.components.CircularButton
             android:id="@+id/pinLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

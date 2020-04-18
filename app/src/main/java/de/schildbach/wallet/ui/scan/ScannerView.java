@@ -30,7 +30,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.google.zxing.ResultPoint;
-import com.greenaddress.greenbits.ui.R;
+import it.bitcoinpeople.wallet.ui.R;
 
 import java.util.HashMap;
 import java.util.Iterator;

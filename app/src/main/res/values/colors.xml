@@ -3,8 +3,8 @@
     <color name="colorPrimary">#414D55</color>
     <color name="colorPrimaryDark">#12171e</color>
     <color name="colorAccent">#00B45A</color>
-    <color name="windowBackground">#12171e</color>
-    <color name="darkJungleGreen">#12171e</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="darkJungleGreen">#FFFFFF</color>
     <color name="mediumJungleGreen">#2b333b</color>
     <color name="buttonJungleGreen">#19222c</color>
     <color name="liquidLight">#76dfd1</color>
