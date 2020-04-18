@@ -133,12 +133,12 @@ public abstract class UI {
         final MaterialDialog.Builder b;
         b = new MaterialDialog.Builder(a)
             .title(title)
-            .titleColorRes(R.color.white)
+            .titleColorRes(R.color.textColor)
             .positiveColor(ThemeUtils.resolveColorAccent(a))
             .negativeColor(ThemeUtils.resolveColorAccent(a))
-            .contentColorRes(R.color.white)
-            .backgroundColor(a.getResources().getColor(R.color.buttonJungleGreen))
-            .theme(Theme.DARK);
+            .contentColorRes(R.color.textColor)
+            .backgroundColor(a.getResources().getColor(R.color.windowBackground))
+            .theme(Theme.LIGHT);
         if (pos != INVALID_RESOURCE_ID)
             b.positiveText(pos);
         if (neg != INVALID_RESOURCE_ID)

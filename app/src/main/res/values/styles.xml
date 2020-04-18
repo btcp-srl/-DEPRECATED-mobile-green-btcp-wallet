@@ -1,9 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/darkJungleGreen</item>
+        <item name="colorPrimary">@android:color/holo_red_light</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="drawableSendReceiveIcColor">@color/accent</item>
@@ -14,17 +14,18 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="colorBackgroundFloating">@color/buttonJungleGreen</item>
         <item name="android:itemBackground">@color/buttonJungleGreen</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/windowBackground</item>
-        <item name="colorPrimaryDark">@color/windowBackground</item>
+        <item name="colorPrimaryDark">#FF9800</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat"/>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat">
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
 
         <!-- colorPrimary is used for the default action bar background -->
@@ -84,7 +85,7 @@
 
     <style name="borderButton" parent="AppTheme.Button">
         <item name="android:background">@drawable/material_button_border</item>
-        <item name="android:textColor">@color/green</item>
+        <item name="android:textColor">@drawable/material_button_border_text</item>
     </style>
 
     <style name="selectionButton" parent="AppTheme.Button">
@@ -114,6 +115,7 @@
     </style>
 
     <style name="nextButton" parent="AppTheme.Button">
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:background">@drawable/material_button</item>
         <item name="android:drawableEnd">@drawable/ic_next</item>

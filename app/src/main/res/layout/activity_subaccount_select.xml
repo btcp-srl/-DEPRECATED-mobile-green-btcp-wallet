@@ -12,7 +12,7 @@
         android:text="@string/id_total_balance"
         android:padding="@dimen/sections_spacing"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         />
     <LinearLayout
         android:layout_width="match_parent"

@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         android:text="@string/id_create_a_pin_to_access_your"
         android:textSize="20sp" />
 

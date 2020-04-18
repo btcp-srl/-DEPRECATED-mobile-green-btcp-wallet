@@ -132,7 +132,7 @@ public class MainFragment extends GAFragment implements View.OnClickListener, Li
         mSwitchNetwork = UI.find(mView, R.id.switchNetwork);
         mSwitchNetwork.setOnClickListener(v -> showDialog());
         mSwitchNetwork.setText(getNetwork().getName());
-        mSwitchNetwork.setTextColor(getResources().getColor(R.color.white));
+        mSwitchNetwork.setTextColor(getResources().getColor(R.color.textColor));
 
         final Drawable arrow = getContext().getResources().getDrawable(R.drawable.ic_expand_more_24dp);
         mSwitchNetwork.setCompoundDrawablesWithIntrinsicBounds(null, null, arrow, null);

@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/id_please_follow_the_instructions"
-                android:textColor="@color/whiteSecondary" />
+                android:textColor="@color/secondaryTextColor" />
 
         </LinearLayout>
 
