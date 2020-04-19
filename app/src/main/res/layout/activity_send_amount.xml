@@ -27,6 +27,33 @@
                 android:text="@string/id_recipient"
                 style="@style/SectionTitle"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_btcp_utente_verde"/>
+
+                <TextView
+                    android:id="@+id/addressText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="8dp"
+                    android:padding="8dp"
+                    android:background="@drawable/material_btcp_recipient"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <!--
+
             <TextView
                 android:id="@+id/addressText"
                 android:layout_width="match_parent"
@@ -36,6 +63,8 @@
                 android:gravity="center_vertical"
                 android:textColor="@color/white"
                 android:textSize="12sp"/>
+
+                -->
 
             <TextView
                 android:layout_width="match_parent"
@@ -135,28 +164,29 @@
                     android:id="@+id/fastButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
+                    android:paddingVertical="4dp"
                     />
 
                 <it.bitcoinpeople.wallet.ui.send.FeeButtonView
                     android:id="@+id/mediumButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
+                    android:paddingVertical="4dp"
                     />
 
                 <it.bitcoinpeople.wallet.ui.send.FeeButtonView
                     android:id="@+id/slowButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
+                    android:paddingVertical="4dp"
                     />
 
                 <it.bitcoinpeople.wallet.ui.send.FeeButtonView
                     android:id="@+id/customButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
+                    android:paddingVertical="4dp"
+                    android:visibility="gone"
                     />
 
             </LinearLayout>

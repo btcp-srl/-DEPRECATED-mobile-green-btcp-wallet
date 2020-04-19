@@ -118,7 +118,7 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:background">@drawable/material_button</item>
-        <item name="android:drawableEnd">@drawable/ic_next</item>
+        <item name="android:drawableEnd">@drawable/ic_btcp_freccia_bianca</item>
         <!-- Negative padding matching the width of ic_next -->
         <item name="android:drawablePadding">-48dp</item>
         <item name="android:paddingEnd">16dp</item>

@@ -12,7 +12,7 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         android:text="Fast"/>
 
     <TextView

@@ -135,7 +135,7 @@ public class TransactionActivity extends LoggedActivity implements View.OnClickL
         mStatusIcon.setVisibility(View.GONE);
         if (mTxItem.getConfirmations(currentBlock) == 0) {
             confirmations = getString(R.string.id_unconfirmed);
-            confirmationsColor = R.color.red;
+            confirmationsColor = R.color.btcp_yellow;
         } else if (mNetworkData.getLiquid() && mTxItem.getConfirmations(currentBlock) < 2) {
             confirmations = getString(R.string.id_12_confirmations);
             confirmationsColor = R.color.grey_light;
@@ -378,7 +378,7 @@ public class TransactionActivity extends LoggedActivity implements View.OnClickL
                                     isChecked) -> cfg().edit().putBoolean(PrefKeys.DONT_ASK_AGAIN_TO_OPEN_URL,
                                                                           isChecked).apply())
                 .content(getString(R.string.id_are_you_sure_you_want_to_view, stripped))
-                .backgroundColor(getResources().getColor(R.color.buttonJungleGreen))
+                .backgroundColor(getResources().getColor(R.color.white))
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
                 .cancelable(false)

@@ -5,9 +5,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/windowBackground</item>
-        <item name="colorPrimaryDark">@color/windowBackground</item>
+        <item name="colorPrimaryDark">#000000</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/windowBackground</item>
         <item name="colorBackgroundFloating">@color/buttonJungleGreen</item>
     </style>
 
@@ -45,7 +44,7 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:background">?attr/materialButton</item>
-        <item name="android:drawableEnd">@drawable/ic_next</item>
+        <item name="android:drawableEnd">@drawable/ic_btcp_freccia_bianca</item>
         <!-- Negative padding matching the width of ic_next -->
         <item name="android:drawablePadding">-48dp</item>
         <item name="android:paddingEnd">14dp</item>

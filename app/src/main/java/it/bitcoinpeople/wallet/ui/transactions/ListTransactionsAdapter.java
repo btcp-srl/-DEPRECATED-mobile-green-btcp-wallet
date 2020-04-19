@@ -155,7 +155,7 @@ public class ListTransactionsAdapter extends
         final int confirmationsColor;
         if (txItem.getConfirmations(currentBlock) == 0) {
             confirmations = mActivity.getString(string.id_unconfirmed);
-            confirmationsColor = color.red;
+            confirmationsColor = color.btcp_yellow;
         } else if (mNetworkData.getLiquid() && txItem.getConfirmations(currentBlock) < 2) {
             confirmations = mActivity.getString(string.id_12_confirmations);
             confirmationsColor = color.grey_light;
@@ -176,7 +176,7 @@ public class ListTransactionsAdapter extends
             amountColor = mNetworkData.getLiquid() ? color.liquidDark : color.green;
             sentOrReceive= drawable.ic_received;
         } else {
-            amountColor = color.white;
+            amountColor = color.green;
             sentOrReceive= drawable.ic_sent;
         }
         if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {

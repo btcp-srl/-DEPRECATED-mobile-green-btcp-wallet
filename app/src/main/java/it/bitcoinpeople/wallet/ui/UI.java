@@ -195,9 +195,9 @@ public abstract class UI {
             final Resources res = activity.getResources();
             final String translated = i18n(res, msg);
             final Toast t = Toast.makeText(activity, translated, len);
-            final View v = t.getView();
-            v.setBackgroundColor(0xaf000000);
-            ((TextView) v.findViewById(android.R.id.message)).setTextColor(ThemeUtils.resolveColorAccent(activity));
+            // final View v = t.getView();
+            // v.setBackgroundColor(0xaf000000);
+            // ((TextView) v.findViewById(android.R.id.message)).setTextColor(ThemeUtils.resolveColorAccent(activity));
             t.show();
         });
     }
