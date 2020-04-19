@@ -189,12 +189,14 @@ public class TabbedMainActivity extends LoggedActivity implements
     }
 
     private void updateBottomNavigationView() {
+        /*
         final MenuItem item = mNavigation.getMenu().findItem(R.id.navigation_notifications);
         runOnUiThread(() ->
                       item.setIcon(!getSession().getNotificationModel().getEvents().isEmpty() ?
                                    R.drawable.bottom_navigation_notifications_2 :
                                    R.drawable.bottom_navigation_notifications)
                       );
+         */
     }
 
     @Override
@@ -269,7 +271,7 @@ public class TabbedMainActivity extends LoggedActivity implements
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
-        private final Fragment[] mFragments = new Fragment[3];
+        private final Fragment[] mFragments = new Fragment[2];
         int mSelectedPage = -1;
         private int mInitialSelectedPage = -1;
         private boolean mInitialPage = true;
@@ -376,9 +378,11 @@ public class TabbedMainActivity extends LoggedActivity implements
         case R.id.navigation_home:
             mViewPager.setCurrentItem(1);
             return true;
+        /*
         case R.id.navigation_notifications:
             mViewPager.setCurrentItem(2);
             return true;
+         */
         }
         return false;
     }

@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/white"
                     android:textSize="36sp" />
 
                 <TextView
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -113,7 +113,7 @@
                 android:id="@+id/mainLocalBalanceText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/secondaryTextColor"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <Space
@@ -148,6 +148,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:drawableStart="@drawable/ic_btcp_send"
+                    android:textColor="@color/white"
                     android:text="@string/id_send"/>
 
                 <Space
@@ -182,6 +183,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:drawableStart="@drawable/ic_btcp_receive"
+                    android:textColor="@color/white"
                     android:text="@string/id_receive"/>
 
                 <Space

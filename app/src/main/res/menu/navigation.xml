@@ -8,13 +8,22 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/bottom_navigation_home"
+        android:icon="@drawable/ic_btcp_posizione_base_verde"
         
         android:title=""/>
 
+    <!--
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/bottom_navigation_notifications"
         android:title=""/>
+
+    -->
+
+    <item
+        android:id="@+id/btcp_website_btn"
+        android:icon="@drawable/ic_btcp_logo_vec"
+        android:title=""
+        />
 
 </menu>

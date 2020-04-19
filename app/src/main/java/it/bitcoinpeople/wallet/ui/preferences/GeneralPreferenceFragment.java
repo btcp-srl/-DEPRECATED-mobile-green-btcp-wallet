@@ -126,12 +126,12 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
         mWatchOnlyLogin.setOnPreferenceClickListener((preference) -> onWatchOnlyLoginClicked());
         setupWatchOnlySummary();
 
-        mAccountTitle = find("account_title");
-        mAccountTitle.setVisible(!isLiquid);
+        // mAccountTitle = find("account_title");
+        // mAccountTitle.setVisible(!isLiquid);
 
         // Network & Logout
         final Preference logout = find(PrefKeys.LOGOUT);
-        logout.setTitle(getString(R.string.id_s_network, mNetworkData.getName()));
+        logout.setTitle("Bitcoin People");
         logout.setSummary(UI.getColoredString(
                               getString(R.string.id_log_out), ContextCompat.getColor(getContext(), R.color.red)));
         logout.setOnPreferenceClickListener(preference -> {
@@ -139,6 +139,8 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
             logout();
             return false;
         });
+
+        /*
 
         // Bitcoin denomination
         mUnitPref = find(PrefKeys.UNIT);
@@ -197,6 +199,8 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
         mCustomRatePref.setVisible(!isLiquid);
         mCustomRatePref.setOnPreferenceClickListener(this::onFeeRatePreferenceClicked);
         setFeeRateSummary();
+
+         */
 
         // Two-factor Authentication Submenu
         mTwoFactorPref = find(PrefKeys.TWO_FACTOR);
@@ -274,6 +278,8 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
             return true;
         });
 
+        /*
+
         findPreference("network_monitor").setVisible(false);
 
         // SPV_SYNCRONIZATION Syncronization Submenu
@@ -297,6 +303,7 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
 
         findPreference(PrefKeys.PGP_KEY).setOnPreferenceClickListener(this::onPGPKeyClicked);
 
+         */
 
         // Terms of service
         final Preference termsOfUse = find(PrefKeys.TERMS_OF_USE);
@@ -422,7 +429,7 @@ public class GeneralPreferenceFragment extends GAPreferenceFragment {
         final EditText inputPassword = UI.find(v, R.id.input_password);
         final MaterialDialog dialog = UI.popup(getActivity(), R.string.id_watchonly_login)
                                       .customView(v, true)
-                                      .backgroundColor(getResources().getColor(R.color.buttonJungleGreen))
+                                      // .backgroundColor(getResources().getColor(R.color.buttonJungleGreen))
                                       .onPositive((dlg, which) -> {
             final String username = UI.getText(inputUser);
             final String password = UI.getText(inputPassword);

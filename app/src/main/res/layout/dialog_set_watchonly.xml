@@ -16,7 +16,7 @@
         android:id="@+id/input_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         android:inputType="textNoSuggestions|textVisiblePassword" />
 
     <TextView
@@ -35,7 +35,7 @@
             android:id="@+id/input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/textColor"
             android:inputType="textPassword"
             android:imeOptions="flagNoPersonalizedLearning"
             android:importantForAccessibility="no" />
