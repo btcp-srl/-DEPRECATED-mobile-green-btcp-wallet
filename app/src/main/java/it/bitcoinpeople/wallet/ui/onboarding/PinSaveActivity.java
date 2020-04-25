@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.greenaddress.greenapi.data.PinData;
+import com.greenaddress.greenapi.data.SettingsData;
+
 import it.bitcoinpeople.wallet.AuthenticationHandler;
 import it.bitcoinpeople.wallet.ui.GaActivity;
 import it.bitcoinpeople.wallet.ui.R;
@@ -18,6 +20,8 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import it.bitcoinpeople.wallet.ui.twofactor.PopupCodeResolver;
+import it.bitcoinpeople.wallet.ui.twofactor.PopupMethodResolver;
 
 import static com.greenaddress.greenapi.Session.getSession;
 
@@ -59,6 +63,13 @@ public class PinSaveActivity extends GaActivity implements PinFragment.OnPinList
                          .subscribe((pinData) -> {
             AuthenticationHandler.setPin(pinData, pin.length() == 6, AuthenticationHandler.getNewAuth(this));
             getSession().setPinJustSaved(true);
+
+            // BTCP: set by default to TRT/EUR
+            final SettingsData settings = getSession().getSettings();
+            settings.getPricing().setCurrency("EUR");
+            settings.getPricing().setExchange("TRT");
+            getSession().changeSettings(settings.toObjectNode()).resolve(new PopupMethodResolver(this), new PopupCodeResolver(this));
+
             setResult(RESULT_OK);
             stopLoading();
             startActivity(intent);

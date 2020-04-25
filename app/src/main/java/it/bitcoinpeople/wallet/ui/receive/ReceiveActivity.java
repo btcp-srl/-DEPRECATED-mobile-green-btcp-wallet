@@ -64,7 +64,8 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
     private EditText mAmountText;
     private Button mUnitButton;
 
-    private Boolean mIsFiat = false;
+    // BTCP: by default on fiat
+    private Boolean mIsFiat = true;
     private String mCurrentAddress = "";
     private ObjectNode mCurrentAmount;
     private BitmapWorkerTask mBitmapWorkerTask;

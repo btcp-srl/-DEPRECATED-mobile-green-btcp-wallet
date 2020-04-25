@@ -66,7 +66,8 @@ public class SendAmountActivity extends LoggedActivity implements TextWatcher, V
     private EditText mAmountText;
     private Button mUnitButton;
 
-    private boolean mIsFiat = false;
+    // BTCP: by default in fiat
+    private boolean mIsFiat = true;
     private ObjectNode mCurrentAmount; // output from GA_convert_amount
 
     private long[] mFeeEstimates = new long[4];

@@ -146,11 +146,12 @@ public abstract class GaActivity extends AppCompatActivity {
         final String netname = networkData.getName();
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_btcp_logo_vec);
-        if (!"Bitcoin".equals(netname))
-            setTitle(String.format(" %s %s",
-                                   netname, getString(resource)));
-        else
-            setTitle(String.format("  %s", getString(resource)));
+        // BTCP: remove network name in the title
+        // if (!"Bitcoin".equals(netname))
+        //    setTitle(String.format(" %s %s",
+        //                          netname, getString(resource)));
+        // else
+        setTitle(String.format("  %s", getString(resource)));
     }
 
     public void setTitleBackTransparent() {
