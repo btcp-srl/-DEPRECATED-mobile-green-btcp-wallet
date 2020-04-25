@@ -383,6 +383,10 @@ public class TabbedMainActivity extends LoggedActivity implements
             mViewPager.setCurrentItem(2);
             return true;
          */
+        case R.id.btcp_website_btn:
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bitcoinpeople.it"));
+            startActivity(browserIntent);
+            return true;
         }
         return false;
     }
