@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import androidx.fragment.app.FragmentTransaction;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -50,6 +52,7 @@ import it.bitcoinpeople.wallet.wallets.HardwareCodeResolver;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import static com.greenaddress.greenapi.Session.getSession;
 import static it.bitcoinpeople.wallet.ui.accounts.SubaccountAddFragment.ACCOUNT_TYPES;
@@ -71,6 +74,7 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
     private BitmapWorkerTask mBitmapWorkerTask;
     private SubaccountData mSubaccountData;
     private boolean isGenerationOnProgress = false;
+    private Disposable generateDisposte, validateDisposte;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -140,12 +144,21 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
         UI.showIf(getNetwork().getLiquid() && "Ledger".equals(hwDeviceName),
                   UI.find(this, id.addressWarning));
 
+        findViewById(R.id.assetWhitelistWarning).setOnClickListener(v -> {
+            final Uri uri = Uri.parse("https://docs.blockstream.com/green/hww/hww-index.html#ledger-supported-assets");
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        });
+
         generateAddress();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (generateDisposte != null)
+            generateDisposte.dispose();
+        if (validateDisposte != null)
+            validateDisposte.dispose();
     }
 
     @Override
@@ -171,8 +184,10 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        if (isGenerationOnProgress)
+        if (isGenerationOnProgress) {
+            showWaitingToast();
             return true;
+        }
         switch (item.getItemId()) {
         case android.R.id.home:
             finish();
@@ -187,9 +202,22 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
 
     @Override
     public void onBackPressed() {
-        if (isGenerationOnProgress)
+        if (isGenerationOnProgress) {
+            showWaitingToast();
             return;
+        }
         super.onBackPressed();
+    }
+
+    private void showWaitingToast() {
+        if (getSession() != null && getSession().getHWWallet() != null) {
+            final String hwDeviceName = getSession().getHWWallet().getHWDeviceData().getDevice().getName();
+            if (getNetwork().getLiquid() && "Ledger".equals(hwDeviceName)) {
+                UI.toast(this, string.id_please_wait_until_your_ledger, Toast.LENGTH_LONG);
+                return;
+            }
+        }
+        UI.toast(this, R.string.id_please_hold_on_while_your, Toast.LENGTH_LONG);
     }
 
     private void updateAddressText() {
@@ -207,16 +235,16 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
     public void generateAddress() {
         // mark generation new address as ongoing
         isGenerationOnProgress = true;
-        Observable.just(getSession())
-        .subscribeOn(Schedulers.computation())
-        .map((session) -> {
+        generateDisposte = Observable.just(getSession())
+                           .subscribeOn(Schedulers.computation())
+                           .map((session) -> {
             final int subaccount = getActiveAccount();
             final GDKTwoFactorCall call = getSession().getReceiveAddress(subaccount);
             final JsonNode jsonResp = call.resolve(null, new HardwareCodeResolver(this));
             return jsonResp;
         })
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe((res) -> {
+                           .observeOn(AndroidSchedulers.mainThread())
+                           .subscribe((res) -> {
             final String address = res.get("address").asText();
             final Long pointer = res.get("pointer").asLong(0);
             mCurrentAddress = address;
@@ -248,13 +276,14 @@ public class ReceiveActivity extends LoggedActivity implements TextWatcher {
         if (!getNetwork().getLiquid() || !isLedger)
             return;
 
-        Observable.just(getSession())
-        .subscribeOn(Schedulers.computation())
-        .map((session) -> {
+        validateDisposte = Observable.just(getSession())
+                           .subscribeOn(Schedulers.computation())
+                           .timeout(30, TimeUnit.SECONDS)
+                           .map((session) -> {
             return generateHW(pointer);
         })
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe((addressHW) -> {
+                           .observeOn(AndroidSchedulers.mainThread())
+                           .subscribe((addressHW) -> {
             if (addressHW == null)
                 throw new Exception();
             else if (addressHW.equals(address))
