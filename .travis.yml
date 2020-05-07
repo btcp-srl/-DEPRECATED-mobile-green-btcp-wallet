@@ -1,24 +1,26 @@
 language: generic
-sudo: required
-matrix:
-  include:
-    - services:
-        - docker
-      script: docker run -v $PWD:/ga greenaddress/android@sha256:c00c98afd6682d9a8e18917e75d1cfca24fa3b9575a783a9abaec826d8b23964 /bin/sh -c "cd /ga && tools/uncrustify && git diff && git diff --quiet && ./gradlew --project-dir=bitcoinj/tools build && ./gradlew lintProductionRelease && ./gradlew assembleProductionRelease"
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - ANDROID_HOME=/Users/travis/opt
-        - SDK_FILENAME=sdk-tools-darwin-4333796.zip
-        - HOMEBREW_NO_AUTO_UPDATE=1
-      install:
-        - mkdir -p $HOME/opt && curl -sSO https://dl.google.com/android/repository/${SDK_FILENAME} && unzip -qq ${SDK_FILENAME} -d $HOME/opt &> /dev/null
-        - brew install uncrustify gnu-sed &> /dev/null
-        - yes | $HOME/opt/tools/bin/sdkmanager "tools" "platform-tools" &> /dev/null
-        - yes | $HOME/opt/tools/bin/sdkmanager "build-tools;29.0.2" &> /dev/null
-        - yes | $HOME/opt/tools/bin/sdkmanager "platforms;android-29" &> /dev/null
-      script:
-        - export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-        - ./tools/uncrustify && git diff && git diff --quiet
-        - ./gradlew lintProductionRelease
-        - ./gradlew assembleProductionRelease
+deploy:
+  provider: releases
+  token:
+    secure: "ldI8gEMwzLZh9+ZT22J1E7K0yZXZAKae/bVZARFxjyuQQJAXFTFJeT2+rgVW49cWIK0VV2XC+BIjeWv22Pb5P/X41wsJD7EcUfLpSgIC9lkAiR3ND2Cs7lC2T3Jx6OIK/LTwX5ses7XaexhSWtYHPNuZHftUjCnqVKLBHB8LnP5zyaqFgA/SHGhUeXyMTmibiwkwtSizZoI/4oPd6w0xyg6QKWg2LkCDMIjOjRtqFXFQZPjxtqZElaaSEzBlVje5J2LyNNDGsq75lO5rNTco8oz1YbKA5nRU7EpGzrYJVNr5YFcydY9omhH7vDvqE5YO3S8WiQQEBE4zOrKCqcJtOSpJEw+eqlfcfOyBCi/gYqBDKxrVPCLm5oCkKLe8m/FpNiiqmtf4HAoTWariABiJSH+5gXlCfzrs/jwCjKHBfUFchgb7nu6Rdb5hHQ2bMW9+3ekFS9I9JCkAW1XK7LGFCbuARryZpi2DLHAyy3dT5D89tI9S50FGQcSBNfRvNzTSspRZ3kWhZR69qCTM2GI4h6qTg6iSokFWXG6K+1FkF8p8D8em+Jy1VhtV7PhFcSDg0VMFNnT015r9OafrD+4FHg6HN23WJelk7OKISJH2ENjJF5NnQbs7MqNbHj//hSexxb/YdDpIzHhp6af9uxgNiV7dYE8RAwm/3bSwOYNs4XI="
+  file: "./app/build/outputs/apk/production/release/app-production-release-unsigned.apk"
+  cleanup: false
+  draft: true
+os: osx
+osx_image: xcode8.3
+env:
+  global:
+    - ANDROID_HOME=/Users/travis/opt
+    - SDK_FILENAME=sdk-tools-darwin-4333796.zip
+    - HOMEBREW_NO_AUTO_UPDATE=1
+install:
+  - mkdir -p $HOME/opt && curl -sSO https://dl.google.com/android/repository/${SDK_FILENAME} && unzip -qq ${SDK_FILENAME} -d $HOME/opt &> /dev/null
+  - brew install uncrustify gnu-sed &> /dev/null
+  - yes | $HOME/opt/tools/bin/sdkmanager "tools" "platform-tools" &> /dev/null
+  - yes | $HOME/opt/tools/bin/sdkmanager "build-tools;29.0.2" &> /dev/null
+  - yes | $HOME/opt/tools/bin/sdkmanager "platforms;android-29" &> /dev/null
+script:
+  - export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  - ./tools/uncrustify && git diff && git diff --quiet
+  - ./gradlew lintProductionRelease
+  - ./gradlew assembleProductionRelease
