@@ -1,4 +1,4 @@
-# Blockstream Green - A native bitcoin wallet for Android
+# Bitcoin People Wallet - A native bitcoin wallet for Android
 
 [![Build Status](https://travis-ci.org/Blockstream/green_android.png?branch=master)](https://travis-ci.org/Blockstream/green_android)
 
