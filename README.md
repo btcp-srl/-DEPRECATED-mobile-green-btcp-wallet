@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/Blockstream/green_android.png?branch=master)](https://travis-ci.org/Blockstream/green_android)
 
-## What is Blockstream Green?
+## What is Bitcoin People Wallet?
 
-Blockstream Green is a non-custodial Bitcoin wallet - it allows you to safely store, send, and receive your Bitcoin. 
+Bitcoin People Wallet is a non-custodial Bitcoin wallet - it allows you to safely store, send, and receive your Bitcoin. 
 
 It's a mobile app available for Android and [iOS](https://github.com/Blockstream/green_ios), based on [gdk](https://github.com/blockstream/gdk), our cross-platform wallet library.
 
