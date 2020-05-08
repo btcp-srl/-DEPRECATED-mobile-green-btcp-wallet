@@ -36,7 +36,7 @@ Read [our FAQ](https://greenaddress.it/en/faq.html) or contact us at [info@bitco
 
 ## License
 
-Blockstream Green is released under the terms of the GNU General Public License. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/GPL-3.0 
+Bitcoin People Wallet is released under the terms of the GNU General Public License. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/GPL-3.0 
 
 ## Authenticity
 
