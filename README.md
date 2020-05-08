@@ -32,7 +32,7 @@ You can help translating this app [here](https://www.transifex.com/blockstream/b
 
 Need help? 
 
-Read [our FAQ](https://greenaddress.it/en/faq.html) or contact us at [info@greenaddress.it](mailto:info@greenaddress.it).  
+Read [our FAQ](https://greenaddress.it/en/faq.html) or contact us at [info@bitcoinpeople.it](mailto:info@bitcoinpeople.it).  
 
 ## License
 
