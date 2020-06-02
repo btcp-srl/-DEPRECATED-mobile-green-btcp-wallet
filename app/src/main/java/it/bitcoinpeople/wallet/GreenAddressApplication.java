@@ -87,9 +87,6 @@ public class GreenAddressApplication extends MultiDexApplication {
         }
 
         migratePreferences();
-
-        // TODO: just for testing!!
-        PreferenceManager.getDefaultSharedPreferences(this).edit().putString(PrefKeys.NETWORK_ID_ACTIVE, "testnet").commit();
     }
 
     public static synchronized boolean isRunningTest() {
