@@ -41,11 +41,11 @@ public class WatchOnlyPreferenceFragment extends GAPreferenceFragment
 
         // Terms of service
         final Preference termsOfUse = find(PrefKeys.TERMS_OF_USE);
-        termsOfUse.setOnPreferenceClickListener(preference -> openURI("https://blockstream.com/green/terms/"));
+        termsOfUse.setOnPreferenceClickListener(preference -> openURI("https://www.bitcoinpeople.it/terms"));
 
         // Privacy policy
         final Preference privacyPolicy = find(PrefKeys.PRIVACY_POLICY);
-        privacyPolicy.setOnPreferenceClickListener(preference -> openURI("https://blockstream.com/green/privacy/"));
+        privacyPolicy.setOnPreferenceClickListener(preference -> openURI("https://www.bitcoinpeople.it/privacy"));
 
         ((Preference) find("logout")).setOnPreferenceClickListener(this);
     }

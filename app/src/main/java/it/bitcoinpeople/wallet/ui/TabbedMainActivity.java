@@ -25,6 +25,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.greenaddress.gdk.GDKTwoFactorCall;
 import com.greenaddress.greenapi.data.BalanceData;
+
+import it.bitcoinpeople.wallet.LinksActivity;
 import it.bitcoinpeople.wallet.ui.authentication.FirstScreenActivity;
 import it.bitcoinpeople.wallet.ui.authentication.RequestLoginActivity;
 import it.bitcoinpeople.wallet.ui.notifications.NotificationsFragment;
@@ -385,8 +387,8 @@ public class TabbedMainActivity extends LoggedActivity implements
             return true;
          */
         case R.id.btcp_website_btn:
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bitcoinpeople.it"));
-            startActivity(browserIntent);
+            Intent intent = new Intent(this, LinksActivity.class);
+            startActivity(intent);
             return true;
         }
         return false;

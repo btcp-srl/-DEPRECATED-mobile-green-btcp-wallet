@@ -31,6 +31,15 @@
         android:layout_margin="16dp"
         android:layout_weight="1"/>
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/powered_by_greenaddress"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
