@@ -270,8 +270,9 @@
             />
         <activity
             android:name="it.bitcoinpeople.wallet.LinksActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data android:name="useNoActionBar" android:value="true"/>
+        </activity>
 
     </application>
 
