@@ -11,6 +11,7 @@ bin/
 gen/
 *.swp
 *.iml
+app/production/
 app/*.apk
 app/manifest-merger-*-report.txt
 .*.swo

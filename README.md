@@ -1,10 +1,10 @@
-# Bitcoin People Wallet - A native bitcoin wallet for Android
+# Baloo Bitcoin Wallet - A native bitcoin wallet for Android
 
 [![Build Status](https://travis-ci.org/Blockstream/green_android.png?branch=master)](https://travis-ci.org/Blockstream/green_android)
 
-## What is Bitcoin People Wallet?
+## What is Baloo Bitcoin Wallet?
 
-Bitcoin People Wallet is a non-custodial Bitcoin wallet - it allows you to safely store, send, and receive your Bitcoin. 
+Baloo Bitcoin Wallet is a non-custodial Bitcoin wallet - it allows you to safely store, send, and receive your Bitcoin.
 
 It's a mobile app available for Android and [iOS](https://github.com/Blockstream/green_ios), based on [gdk](https://github.com/blockstream/gdk), our cross-platform wallet library.
 
@@ -36,7 +36,7 @@ Read [our FAQ](https://greenaddress.it/en/faq.html) or contact us at [info@bitco
 
 ## License
 
-Bitcoin People Wallet is released under the terms of the GNU General Public License. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/GPL-3.0 
+Baloo Bitcoin Wallet is released under the terms of the GNU General Public License. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/GPL-3.0
 
 ## Authenticity
 

@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Bitcoin People Wallet"
+        android:text="Baloo Bitcoin Wallet"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
         android:textColor="#000000"

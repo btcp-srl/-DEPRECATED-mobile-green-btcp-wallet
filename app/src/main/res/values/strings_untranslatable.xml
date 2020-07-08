@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Bitcoin People Wallet</string>
+    <string name="app_name" translatable="false">Baloo Bitcoin Wallet</string>
     <string name="empty" translatable="false" />
     <string name="btchip" translatable="false">BTChip</string>
     <string name="pref_default_host" translatable="false">127.0.0.1</string>
